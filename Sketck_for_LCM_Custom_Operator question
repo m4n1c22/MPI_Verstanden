@@ -25,4 +25,6 @@ main() {
   
   // call MPI_Reduce(buf,resultant_lcm,count,MPI_INT,LCM_OP,root,MPI_COMM_WORLD);
   
+  MPI_Op_Free(LCM_OP);
+  
 }
