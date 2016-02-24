@@ -47,7 +47,7 @@ main() {
   
   /** Possible Implementation with Reduce_Scatter method*/
   MPI_Reduce_scatter_block(vals_array,res,1,MPI_INT,LCM_OP,root,MPI_COMM_WORLD);
-  MPI_Reduce(res,resultant_lcm,1,MPI_INT,LCM_OP,root,MPI_COMM_WORLD);
+  MPI_Allreduce(res,resultant_lcm,1,MPI_INT,LCM_OP,MPI_COMM_WORLD);
   MPI_Op_Free(LCM_OP);
   
 }
